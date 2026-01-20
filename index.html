@@ -5,15 +5,15 @@
     <title>Avances Tecnológicos</title>
     <style>
         body {
-            background-color: #92A80B;
+            background-color: #0f0f0f;
             font-family: Arial, sans-serif;
-            color: #ffffff;
+            color: white;
             padding: 20px;
         }
 
         table {
             width: 100%;
-            max-width: 900px;
+            max-width: 1100px;
             margin: auto;
             border-collapse: collapse;
             background-color: #121212;
@@ -22,12 +22,11 @@
         th, td {
             border: 1px solid #d1d1d1;
             padding: 12px;
-            text-align: left;
+            vertical-align: middle;
         }
 
         th {
             font-size: 18px;
-            font-weight: bold;
         }
 
         a {
@@ -38,67 +37,140 @@
         a:hover {
             text-decoration: underline;
         }
+
+        .imagenes {
+            display: flex;
+            gap: 8px;
+        }
+
+        .imagenes img {
+            width: 90px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
 
-    <table>
-        <tr>
-            <th>País</th>
-            <th>Antecedentes</th>
-            <th>Tecnología</th>
-        </tr>
-        <tr>
-            <td>China</td>
-            <td><a href="https://muyinteresante.okdiario.com/actualidad/37753.html" target="_blank">Link 1</a></td>
-            <td>4 imágenes</td>
-        </tr>
-        <tr>
-            <td>USA</td>
-            <td><a href="https://share.america.gov/es/estas-innovaciones-en-ee-uu-estan-transformando-la-medicina/" target="_blank">Link 2</a></td>
-            <td>4 imágenes</td>
-        </tr>
-        <tr>
-            <td>Brazil</td>
-            <td><a href="https://www.computerweekly.com/es/cronica/Tecnologias-para-un-futuro-sostenible-que-transformaran-Brasil" target="_blank">Link 3</a></td>
-            <td>4 imágenes</td>
-        </tr>
-        <tr>
-            <td>Rusia</td>
-            <td><a href="https://noticiaslatam.lat/20231019/hecho-en-rusia-las-impresionantes-tecnologias-rusas-para-el-mundo-1144936732.html" target="_blank">Link 4</a></td>
-            <td>4 imágenes</td>
-        </tr>
-        <tr>
-            <td>Alemania</td>
-            <td><a href="https://www.tatsachen-ueber-deutschland.de/es/clima-y-energia/tecnologia-verde-un-sector-con-futuro" target="_blank">Link 5</a></td>
-            <td>4 imágenes</td>
-        </tr>
-        <tr>
-            <td>Austria</td>
-            <td><a href="https://www.energynews.es/tecnologia-made-in-austria/" target="_blank">Link 6</a></td>
-            <td>4 imágenes</td>
-        </tr>
-        <tr>
-            <td>Reino Unido</td>
-            <td><a href="https://www.bbc.com/storyworks/specials/clean-growth-latac/in-the-world-of-clean-energy-uk-innovative-technologies-are-transforming-latac-spanish/" target="_blank">Link 7</a></td>
-            <td>4 imágenes</td>
-        </tr>
-        <tr>
-            <td>Irlanda</td>
-            <td><a href="https://www.emaint.com/es/portafolio/ireland-as-eu-digital-hub/" target="_blank">Link 8</a></td>
-            <td>4 imágenes</td>
-        </tr>
-        <tr>
-            <td>Australia</td>
-            <td><a href="https://www.spain-australia.org/en/news_article/el_sector_tecnologico_australiano_recibe_nuevas_inversiones" target="_blank">Link 9</a></td>
-            <td>4 imágenes</td>
-        </tr>
-        <tr>
-            <td>Noruega</td>
-            <td><a href="https://ecoconstruccion.net/noticias/una-nueva-tecnologia-noruega-podria-revolucionar-la-obtencion-de-energia-solar-akJ8X" target="_blank">Link 10</a></td>
-            <td>4 imágenes</td>
-        </tr>
-    </table>
+<table>
+    <tr>
+        <th>País</th>
+        <th>Antecedentes</th>
+        <th>Tecnología</th>
+    </tr>
+
+    <tr>
+        <td>China</td>
+        <td><a href="https://muyinteresante.okdiario.com/actualidad/37753.html" target="_blank">Link</a></td>
+        <td class="imagenes">
+            <img src="https://source.unsplash.com/160x100/?china,technology">
+            <img src="https://source.unsplash.com/161x100/?robot,ai">
+            <img src="https://source.unsplash.com/162x100/?factory,automation">
+            <img src="https://source.unsplash.com/163x100/?electronics">
+        </td>
+    </tr>
+
+    <tr>
+        <td>USA</td>
+        <td><a href="https://share.america.gov/es/estas-innovaciones-en-ee-uu-estan-transformando-la-medicina/" target="_blank">Link</a></td>
+        <td class="imagenes">
+            <img src="https://source.unsplash.com/160x100/?usa,technology">
+            <img src="https://source.unsplash.com/161x100/?medical,technology">
+            <img src="https://source.unsplash.com/162x100/?biotech">
+            <img src="https://source.unsplash.com/163x100/?laboratory">
+        </td>
+    </tr>
+
+    <tr>
+        <td>Brazil</td>
+        <td><a href="https://www.computerweekly.com/es/cronica/Tecnologias-para-un-futuro-sostenible-que-transformaran-Brasil" target="_blank">Link</a></td>
+        <td class="imagenes">
+            <img src="https://source.unsplash.com/160x100/?brazil,technology">
+            <img src="https://source.unsplash.com/161x100/?renewable,energy">
+            <img src="https://source.unsplash.com/162x100/?solar,panels">
+            <img src="https://source.unsplash.com/163x100/?wind,energy">
+        </td>
+    </tr>
+
+    <tr>
+        <td>Rusia</td>
+        <td><a href="https://noticiaslatam.lat/20231019/hecho-en-rusia-las-impresionantes-tecnologias-rusas-para-el-mundo-1144936732.html" target="_blank">Link</a></td>
+        <td class="imagenes">
+            <img src="https://source.unsplash.com/160x100/?russia,technology">
+            <img src="https://source.unsplash.com/161x100/?satellite">
+            <img src="https://source.unsplash.com/162x100/?space,technology">
+            <img src="https://source.unsplash.com/163x100/?engineering">
+        </td>
+    </tr>
+
+    <tr>
+        <td>Alemania</td>
+        <td><a href="https://www.tatsachen-ueber-deutschland.de/es/clima-y-energia/tecnologia-verde-un-sector-con-futuro" target="_blank">Link</a></td>
+        <td class="imagenes">
+            <img src="https://source.unsplash.com/160x100/?germany,technology">
+            <img src="https://source.unsplash.com/161x100/?green,technology">
+            <img src="https://source.unsplash.com/162x100/?electric,car">
+            <img src="https://source.unsplash.com/163x100/?industry">
+        </td>
+    </tr>
+
+    <tr>
+        <td>Austria</td>
+        <td><a href="https://www.energynews.es/tecnologia-made-in-austria/" target="_blank">Link</a></td>
+        <td class="imagenes">
+            <img src="https://source.unsplash.com/160x100/?austria,technology">
+            <img src="https://source.unsplash.com/161x100/?hydropower">
+            <img src="https://source.unsplash.com/162x100/?energy,plant">
+            <img src="https://source.unsplash.com/163x100/?engineering,plant">
+        </td>
+    </tr>
+
+    <tr>
+        <td>Reino Unido</td>
+        <td><a href="https://www.bbc.com/storyworks/specials/clean-growth-latac/in-the-world-of-clean-energy-uk-innovative-technologies-are-transforming-latac-spanish/" target="_blank">Link</a></td>
+        <td class="imagenes">
+            <img src="https://source.unsplash.com/160x100/?uk,technology">
+            <img src="https://source.unsplash.com/161x100/?clean,energy">
+            <img src="https://source.unsplash.com/162x100/?wind,turbine">
+            <img src="https://source.unsplash.com/163x100/?innovation">
+        </td>
+    </tr>
+
+    <tr>
+        <td>Irlanda</td>
+        <td><a href="https://www.emaint.com/es/portafolio/ireland-as-eu-digital-hub/" target="_blank">Link</a></td>
+        <td class="imagenes">
+            <img src="https://source.unsplash.com/160x100/?ireland,technology">
+            <img src="https://source.unsplash.com/161x100/?data,center">
+            <img src="https://source.unsplash.com/162x100/?cloud,computing">
+            <img src="https://source.unsplash.com/163x100/?servers">
+        </td>
+    </tr>
+
+    <tr>
+        <td>Australia</td>
+        <td><a href="https://www.spain-australia.org/en/news_article/el_sector_tecnologico_australiano_recibe_nuevas_inversiones" target="_blank">Link</a></td>
+        <td class="imagenes">
+            <img src="https://source.unsplash.com/160x100/?australia,technology">
+            <img src="https://source.unsplash.com/161x100/?startup,technology">
+            <img src="https://source.unsplash.com/162x100/?solar,energy">
+            <img src="https://source.unsplash.com/163x100/?innovation,lab">
+        </td>
+    </tr>
+
+    <tr>
+        <td>Noruega</td>
+        <td><a href="https://ecoconstruccion.net/noticias/una-nueva-tecnologia-noruega-podria-revolucionar-la-obtencion-de-energia-solar-akJ8X" target="_blank">Link</a></td>
+        <td class="imagenes">
+            <img src="https://source.unsplash.com/160x100/?norway,technology">
+            <img src="https://source.unsplash.com/161x100/?solar,technology">
+            <img src="https://source.unsplash.com/162x100/?renewable,energy">
+            <img src="https://source.unsplash.com/163x100/?research,technology">
+        </td>
+    </tr>
+
+</table>
 
 </body>
 </html>
