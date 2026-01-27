@@ -1,156 +1,169 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Avances Tecnológicos</title>
-    <style>
-        body {
-            background-color: #0f0f0f;
-            font-family: Arial, sans-serif;
-            color: white;
-            padding: 20px;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Esperanza Santa Blanca</title>
+  <style>
+    :root{
+      --bg: #FFFFFF;
+      --text: #000000;
+      --accent: #FF0000;
+      --sidebar-width: 220px;
+      --translate-distance: 60vw; /* will be replaced by JS */
+      --title-width: 200px; /* placeholder */
+    }*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  display:flex;
+  min-height:100vh;
+}
 
-        table {
-            width: 100%;
-            max-width: 1100px;
-            margin: auto;
-            border-collapse: collapse;
-            background-color: #121212;
-        }
+/* Sidebar */
+.sidebar{
+  width:var(--sidebar-width);
+  background: #f5f5f5;
+  padding:20px 12px;
+  border-right:1px solid #e5e5e5;
+}
+.brand{color:var(--accent);font-weight:700;font-size:18px;margin-bottom:12px}
+nav ul{list-style:none;padding:0;margin:0}
+nav li{margin:8px 0}
+nav a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:700;
+  display:block;
+  padding:8px 10px;
+  border-radius:6px;
+}
+nav a:hover{background:#ffecec}
 
-        th, td {
-            border: 1px solid #d1d1d1;
-            padding: 12px;
-            vertical-align: middle;
-        }
+/* Main content area */
+.main{
+  flex:1;
+  padding:28px;
+  position:relative;
+  overflow:hidden;
+}
 
-        th {
-            font-size: 18px;
-        }
+/* Welcome title that moves */
+.welcome-wrap{position:relative;overflow:visible}
+.welcome{
+  display:inline-block;
+  font-size:36px;
+  font-weight:700;
+  color:var(--accent);
+  margin:0 0 18px 0;
+  white-space:nowrap;
+  /* animation will use CSS variable set by JS */
+  animation: slideRight 10s linear infinite;
+}
 
-        a {
-            color: #4ea1ff;
-            text-decoration: none;
-        }
+@keyframes slideRight{
+  0%{transform: translateX(0); opacity:1}
+  70%{opacity:1}
+  100%{transform: translateX(var(--translate-distance)); opacity:0}
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+/* Section cards */
+.section{display:none}
+.section.active{display:block}
+h2{color:var(--accent);margin-top:0}
+p{color:var(--text);line-height:1.5}
+.hero-img{max-width:100%;height:auto;border-radius:8px;margin-top:10px}
 
-        .imagenes {
-            display: flex;
-            gap: 8px;
-        }
+/* small responsive tweak */
+@media (max-width:700px){
+  .sidebar{display:none}
+  body{flex-direction:column}
+  .main{padding:18px}
+}
 
-        .imagenes img {
-            width: 90px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-    </style>
+  </style>
 </head>
 <body>
+  <aside class="sidebar" aria-label="Menú principal">
+    <div class="brand">Esperanza Santa Blanca</div>
+    <nav>
+      <ul>
+        <li><a href="#" data-section="inicio">Inicio</a></li>
+        <li><a href="#" data-section="conocenos">Conócenos</a></li>
+        <li><a href="#" data-section="mision">Misión</a></li>
+        <li><a href="#" data-section="objetivo">Objetivo</a></li>
+        <li><a href="#" data-section="vision">Visión</a></li>
+      </ul>
+    </nav>
+  </aside>  <main class="main">
+    <div class="welcome-wrap">
+      <h1 class="welcome" id="welcome">Bienvenido</h1>
+    </div><section id="inicio" class="section active">
+  <h2>Inicio</h2>
+  <p>Bienvenido al sitio de <strong>Esperanza Santa Blanca</strong>. Usa el menú para navegar por las secciones.</p>
+</section>
 
-<table>
-    <tr>
-        <th>País</th>
-        <th>Antecedentes</th>
-        <th>Tecnología</th>
-    </tr>
+<section id="conocenos" class="section">
+  <h2>Conócenos</h2>
+  <p>El proyecto "Esperanza Santa Blanca" se dedica a administrar una pequeña escuela boliviana en una zona rural afectada por un gran incendio forestal. Aunque no hay información específica, este sería el enfoque general del proyecto.</p>
+  <img class="hero-img" src="https://imgs.search.brave.com/7k0L8x_BWw48nqAvzTRhHtyu-iLpXvoUFk2kS78rwg0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tYWdy/aXRvdXJvcGVyYXRv/ci5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjUvMDMvcHVl/Ymxvcy1ydXJhbGVz/LWJvbGl2aWEtbWFn/cmktdG91ci1vcGVy/YXRvci0wOC5qcGc" alt="Imagen Conócenos">
+</section>
 
-    <tr>
-        <td>China</td>
-        <td><a href="https://muyinteresante.okdiario.com/actualidad/37753.html" target="_blank">Link</a></td>
-        <td class="imagenes">
-            <img src="https://media.gettyimages.com/id/1987307560/es/foto/visualizaci%C3%B3n-de-big-data-part%C3%ADculas-digitales-abstractas-antecedentes-de-la-red-cibern%C3%A9tica.jpg?s=612x612&w=0&k=20&c=xCCuMy7-dlDV4dgA9CJ4E2lUO4a8VZ08su0KVKOmJhM=">
-            <img src="https://media.gettyimages.com/id/1322205588/es/foto/foto-recortada-de-tres-j%C3%B3venes-empresarios-trabajando-juntos-en-una-computadora-port%C3%A1til-en-su.jpg?s=612x612&w=0&k=20&c=KmJwdPs3yYk5ZXf-LrW16RVLTQVSjHo4aDRTLXgC7uQ=">
-        </td>
-    </tr>
+<section id="mision" class="section">
+  <h2>Misión</h2>
+  <p>Brindar educación de calidad a los niños y niñas de la zona rural afectada, promoviendo su desarrollo integral y empoderamiento para superar las adversidades causadas por el incendio forestal.</p>
+  <img class="hero-img" src="https://imgs.search.brave.com/Lxs701B_6siKeagdco1jI7jWPW2nEXix-g7Yip5_6NM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tYWdy/aXRvdXJvcGVyYXRv/ci5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjUvMDMvcHVl/Ymxvcy1ydXJhbGVz/LWJvbGl2aWEtbWFn/cmktdG91ci1vcGVy/YXRvci0wMS5qcGc" alt="Imagen Misión">
+</section>
 
-    <tr>
-        <td>USA</td>
-        <td><a href="https://share.america.gov/es/estas-innovaciones-en-ee-uu-estan-transformando-la-medicina/" target="_blank">Link</a></td>
-        <td class="imagenes">
-            <img src="https://media.gettyimages.com/id/1483272796/es/foto/seminario-de-codificaci%C3%B3n-hablando.jpg?s=612x612&w=0&k=20&c=g-Jq9csi90N-g1tlUKh-ZP844dcab4tFpLx6PpT3uk8=">
-            <img src="https://media.gettyimages.com/id/2172249360/es/foto/ia-inteligencia-artificial-concepto-de-computaci%C3%B3n-cu%C3%A1ntica-con-cpu-transformaci%C3%B3n-digital-y.jpg?s=612x612&w=0&k=20&c=etR0sKp-3nWw2OG3IVTDKKokmwEgz08t14JCvN0CzyQ=">
-        </td>
-    </tr>
+<section id="objetivo" class="section">
+  <h2>Objetivo</h2>
+  <p>Mejorar la calidad educativa y las condiciones de vida de los niños y niñas de la zona rural afectada, a través de programas de educación, salud y desarrollo comunitario.</p>
+  <img class="hero-img" src="https://imgs.search.brave.com/xqKTNGl-y6so7Tuv0JFtTE5ITXA4kCvuMjKz1faXEJA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Z2xvYmFsZ2l2aW5n/Lm9yZy9wZmlsLzY1/NDI3L3BpY3RfbGFy/Z2UuanBn" alt="Imagen Objetivo">
+</section>
 
-    <tr>
-        <td>Brazil</td>
-        <td><a href="https://www.computerweekly.com/es/cronica/Tecnologias-para-un-futuro-sostenible-que-transformaran-Brasil" target="_blank">Link</a></td>
-        <td class="imagenes">
-            <img src="https://media.gettyimages.com/id/2094337676/es/foto/equipo-diverso-que-trabaja-en-conjunto-en-un-moderno-espacio-de-coworking.jpg?s=612x612&w=0&k=20&c=-lR_zWwquQHxmVyDuBwFnQr6JZr_in9qSvUjAYljnSU=">
-            <img src="https://media.gettyimages.com/id/616902766/es/foto/dedicado-de-desarrollo-de-software.jpg?s=612x612&w=0&k=20&c=Lljz6hkQw_O_J2I81UMKRl6aNvmPKc_JOjXzQEbr5-A=">
-        </td>
-    </tr>
+<section id="vision" class="section">
+  <h2>Visión</h2>
+  <p>Convertirnos en un referente de educación y desarrollo comunitario en la región, fomentando la resiliencia y el crecimiento sostenible de la comunidad.</p>
+  <img class="hero-img" src="https://imgs.search.brave.com/bM5m6fHK8sWmTo5bdqjhbfT8DoRnZwmr0FaIia1jfeA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tYWdy/aXRvdXJvcGVyYXRv/ci5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMjUvMDMvcHVl/Ymxvcy1ydXJhbGVz/LWJvbGl2aWEtbWFn/cmktdG91ci1vcGVy/YXRvci0wNi5qcGc" alt="Imagen Visión">
+</section>
 
-    <tr>
-        <td>Rusia</td>
-        <td><a href="https://noticiaslatam.lat/20231019/hecho-en-rusia-las-impresionantes-tecnologias-rusas-para-el-mundo-1144936732.html" target="_blank">Link</a></td>
-        <td class="imagenes">
-            <img src="https://media.gettyimages.com/id/1629818920/es/foto/fondo-abstracto-de-la-onda-de-gravedad.jpg?s=612x612&w=0&k=20&c=A-IIgnotS8ds5OXaGk5JhJzhd2M_Ym1jkOmoM4z_230=">
-            <img src="https://media.gettyimages.com/id/2148123501/es/foto/estructura-de-big-data-concepto-de-bloques.jpg?s=612x612&w=0&k=20&c=1OZrkWff03F6KrPBsmij3KgDP4gC4fGgKwZzaQNPIB4=">
-        </td>
-    </tr>
+  </main>  <script>
+    // Navigation
+    document.querySelectorAll('.sidebar a').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const target = a.getAttribute('data-section');
+        showSection(target);
+      });
+    });
 
-    <tr>
-        <td>Alemania</td>
-        <td><a href="https://www.tatsachen-ueber-deutschland.de/es/clima-y-energia/tecnologia-verde-un-sector-con-futuro" target="_blank">Link</a></td>
-        <td class="imagenes">
-            <img src="https://media.gettyimages.com/id/2155090853/es/foto/datalake-big-data-warehouse-data-lake-platform-analytics-technology.jpg?s=612x612&w=0&k=20&c=AVkXgA7lrVGfagRkgZa9AtM1QTeD69w2U8qrpbTACX0=">
-            <img src="https://media.gettyimages.com/id/1488457074/es/foto/placas-de-circuito-impreso.jpg?s=612x612&w=0&k=20&c=mtSp8Jn4RhAErXnLVLhHTur2K-pOWHR5Kzo-gsJZFHw=">
-        </td>
-    </tr>
+    function showSection(id){
+      document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+      const target = document.getElementById(id);
+      if(target) target.classList.add('active');
+    }
 
-    <tr>
-        <td>Austria</td>
-        <td><a href="https://www.energynews.es/tecnologia-made-in-austria/" target="_blank">Link</a></td>
-        <td class="imagenes">
-            <img src="https://media.gettyimages.com/id/2155769551/es/foto/t%C3%BAnel-digital-de-datos-flujo-de-informaci%C3%B3n.jpg?s=612x612&w=0&k=20&c=VygZWxZawy4hGT61lV9l4SxSEVn0S39o41eJbaesugY=">
-            <img src="https://media.gettyimages.com/id/2149530993/es/foto/concepto-de-cabeza-humana-digital-para-ia-metaverso-y-tecnolog%C3%ADa-de-reconocimiento-facial.jpg?s=612x612&w=0&k=20&c=LgJwbozlsJTJgJ-XMPCK9Ntl8H_FO0iLI5wmakXyWZw=">
-        </td>
-    </tr>
+    // Measure and set CSS variables for the animation so the title moves across the available main area
+    function updateAnimationVars(){
+      const root = document.documentElement;
+      const welcome = document.getElementById('welcome');
+      const main = document.querySelector('.main');
+      if(!welcome || !main) return;
+      const welcomeWidth = Math.ceil(welcome.getBoundingClientRect().width);
+      const mainWidth = Math.ceil(main.getBoundingClientRect().width);
+      const distance = Math.max(0, mainWidth - welcomeWidth - 24); // leave a small margin
+      root.style.setProperty('--title-width', welcomeWidth + 'px');
+      root.style.setProperty('--translate-distance', distance + 'px');
+      // adjust animation-duration based on distance (optional): longer distance -> slightly longer time
+      const base = 9000; // ms
+      const duration = Math.min(18000, Math.max(5000, Math.round(base * (distance / Math.max(300, mainWidth)))));
+      welcome.style.animationDuration = duration + 'ms';
+    }
 
-    <tr>
-        <td>Reino Unido</td>
-        <td><a href="https://www.bbc.com/storyworks/specials/clean-growth-latac/in-the-world-of-clean-energy-uk-innovative-technologies-are-transforming-latac-spanish/" target="_blank">Link</a></td>
-        <td class="imagenes">
-            <img src="https://media.gettyimages.com/id/1663279091/es/foto/dos-j%C3%B3venes-colegas-trabajando-juntos-en-una-oficina-moderna.jpg?s=612x612&w=0&k=20&c=oUEmYMjqvWzRKeO8cg-2TNnrAJvSDITSHSsvl5qF5hk=">
-            <img src="https://media.gettyimages.com/id/2166193783/es/foto/reuni%C3%B3n-del-equipo-de-an%C3%A1lisis-de-datos-por-la-noche.jpg?s=612x612&w=0&k=20&c=KV_nelXdMHfFKLLwQCAEv8Miq63C8aJa4lUkC8kXl0s=">
-        </td>
-    </tr>
-
-    <tr>
-        <td>Irlanda</td>
-        <td><a href="https://www.emaint.com/es/portafolio/ireland-as-eu-digital-hub/" target="_blank">Link</a></td>
-        <td class="imagenes">
-            <img src="https://media.gettyimages.com/id/2012746941/es/foto/seguridad-cibern%C3%A9tica-hombre-negro-y-reflexi%C3%B3n-de-c%C3%B3digo-en-gafas-pirater%C3%ADa-y-actualizaci%C3%B3n-de.jpg?s=612x612&w=0&k=20&c=H-NHHG89Gq_zbgeFvvUlBxu6R1gKuDlB4wq9ynvuSoc=">
-            <img src="https://media.gettyimages.com/id/1148091793/es/foto/la-tecnolog%C3%ADa-abstracta.jpg?s=612x612&w=0&k=20&c=YBaUv0XcsN6Cm5kSTEER0x3aAb842jg4uKjzJgX4bek=">
-        </td>
-    </tr>
-
-    <tr>
-        <td>Australia</td>
-        <td><a href="https://www.spain-australia.org/en/news_article/el_sector_tecnologico_australiano_recibe_nuevas_inversiones" target="_blank">Link</a></td>
-        <td class="imagenes">
-            <img src="https://media.gettyimages.com/id/1350722246/es/foto/fondo-de-la-sala-de-servidores.jpg?s=612x612&w=0&k=20&c=hg-_dommkXg6oMsqaun0C-4CV9Ot1Yp9fckJic5hQ14=">
-            <img src="https://media.gettyimages.com/id/2186780950/es/foto/ingenieros-de-software-que-colaboran-en-un-proyecto-analizando-c%C3%B3digo-en-monitores-de.jpg?s=612x612&w=0&k=20&c=SzbeumRlNpPJwb4xQHnnDK_FLBfCyqJsf-xytu0oJCw=">
-        </td>
-    </tr>
-
-    <tr>
-        <td>Noruega</td>
-        <td><a href="https://ecoconstruccion.net/noticias/una-nueva-tecnologia-noruega-podria-revolucionar-la-obtencion-de-energia-solar-akJ8X" target="_blank">Link</a></td>
-        <td class="imagenes">
-            <img src="https://media.gettyimages.com/id/1770654774/es/foto/conferencia-de-negocios-globales.jpg?s=612x612&w=0&k=20&c=vFF7lJFZbOu9-oQ-HozvRwJuMzIgIorDTYdnNWX0PFk=">
-            <img src="https://media.gettyimages.com/id/2148619547/es/vector/ondas-de-energ%C3%ADa-brillantes-azules-abstractas-de-part%C3%ADculas-de-l%C3%ADnea-punteada-con-efecto-de.jpg?s=612x612&w=0&k=20&c=6kepiUDW_Si4sBkP9Cj39-dDNTrX96wT9usmrQf1KUw=">
-        </td>
-    </tr>
-
-</table>
-
-</body>
+    window.addEventListener('load', updateAnimationVars);
+    window.addEventListener('resize', ()=>{ window.requestAnimationFrame(updateAnimationVars); });
+  </script></body>
 </html>
